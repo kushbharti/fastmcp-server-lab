@@ -2,3 +2,4 @@ fastmcp
 fastmcp_tasks
 ipykernel
 fastmcp[tasks]
+python-decouple
