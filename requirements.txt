@@ -1,4 +1,5 @@
 fastmcp
+fastapi[standard]
 fastmcp_tasks
 ipykernel
 fastmcp[tasks]

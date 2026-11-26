@@ -6,6 +6,8 @@ from email.mime.text import MIMEText
 from fastmcp import FastMCP
 from decouple import config
 
+from config import setting
+
 mcp = FastMCP(
     name="Email sending MCP Server.."
 )
@@ -23,7 +25,7 @@ def _send(email:str, subject:str, body:str) -> str:
 
     with smtplib.SMTP("smtp.gmail.com", 587) as server:
         server.starttls()
-        server.login(config("SENDER_EMAIL"), config("PASSWORD"))
+        server.login(setting.SENDER_EMAIL, setting.PASSWORD)
         server.send_message(message)
 
 
