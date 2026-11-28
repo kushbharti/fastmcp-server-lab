@@ -22,7 +22,7 @@ def whoami() -> dict:
     
     return {
         "client_id" : token.client_id,
-        # "email": token.claims.get("email","")
+        "email": token.claims.get("email","")
     }
     
 mcp.run(transport="streamable-http")

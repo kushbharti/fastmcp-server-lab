@@ -1,6 +1,6 @@
 import jwt
 import uvicorn
-from datetime import timedelta,datetime
+from datetime import timedelta,datetime, timezone
 
 from fastapi import FastAPI
 from pydantic import BaseModel
@@ -21,7 +21,7 @@ class TokenResponse(BaseModel):
 
 @app.post("/token",response_model=TokenResponse)
 def generate_token(req:TokenRequest):
-    now = datetime.now()
+    now = datetime.now(timezone.utc)
     exp = now + timedelta(hours=setting.JWT_EXPIRE_HOURS)
     
     payload = {
@@ -43,4 +43,4 @@ def health():
     }
     
 if __name__ =="__main__":
-    uvicorn.run(app,host="0.0.0.0",port=8001)
+    uvicorn.run(app,host="127.0.0.1",port=8001)

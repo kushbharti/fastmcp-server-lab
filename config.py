@@ -10,7 +10,7 @@ class Settings:
     JWT_ALGORITHM = config("JWT_ALGORITHM")
     JWT_SECRET = config("JWT_SECRET")
     JWT_ISSUER = config("JWT_ISSUER")
-    JWT_EXPIRE_HOURS: int = config("JWT_EXPIRE_HOURS")
+    JWT_EXPIRE_HOURS: int = config("JWT_EXPIRE_HOURS", cast=int)
     JWT_AUDIENCE:str = config("JWT_AUDIENCE")
     
     
