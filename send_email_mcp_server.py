@@ -31,7 +31,7 @@ def _send(email:str, subject:str, body:str) -> str:
 
     return "Email sent successfully!"
 
-@mcp.too
+@mcp.tool
 def send_mail(email:str, subject:str, body:str) -> str:
     """Can end email to any email address, just required Email address, Subject and Body
 

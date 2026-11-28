@@ -13,5 +13,9 @@ class Settings:
     JWT_EXPIRE_HOURS: int = config("JWT_EXPIRE_HOURS", cast=int)
     JWT_AUDIENCE:str = config("JWT_AUDIENCE")
     
+    # Google Oauth Authentication
+    GOOGLE_CLIENT_ID:str = config("GOOGLE_CLIENT_ID")
+    GOOGLE_CLIENT_SECRET:str = config("GOOGLE_CLIENT_SECRET")
     
+    MCP_SERVER_URL:str =config("MCP_SERVER_URL")
 setting = Settings()
